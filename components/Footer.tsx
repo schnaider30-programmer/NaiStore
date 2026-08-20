@@ -10,9 +10,12 @@ export default function Footer() {
       <Container>
         <FooterTop />
         <FooterBottom />
-        <div className="flex items-center">
-          ©️{new Date().getFullYear()}{" "}
-          <LogoText className="text-sm md:text-sm hover:cursor-pointer tracking-wide" />
+        <div className="py-6 border-t text-center text-sm font-poppins">
+          <div className="inline-flex items-center">
+            © {new Date().getFullYear()}
+            <LogoText className="text-sm md:text-sm tracking-wider cursor-pointer" />
+            . All right reserved
+          </div>
         </div>
       </Container>
     </footer>
