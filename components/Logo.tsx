@@ -19,7 +19,7 @@ export default function Logo({
       <Image
         className={cn("py-2 w-8 md:w-16 h-auto", imageClassName)}
         width={width ?? 64}
-        height={height ?? 64}
+        height={height ?? 64} 
         src="/naiStore-optimized.png"
         alt="Nai Online Store Logo"
       ></Image>
