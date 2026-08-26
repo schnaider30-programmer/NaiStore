@@ -4,8 +4,8 @@ import { Button } from "./ui/button";
 
 export default function HomeTab({selectedTab, onTabSelect} : {selectedTab: string, onTabSelect: (tab: string) => void}) {
   return (
-    <div className="flex items-center justify-between flex-wrap gap-5">
-      <div className="flex items-center gap-3 text-sm font-semibold">
+    <div className="mt-5 flex items-center justify-between flex-wrap gap-5">
+      <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
         {ProductType.map((p) => (
           <Button
             key={p.title}
