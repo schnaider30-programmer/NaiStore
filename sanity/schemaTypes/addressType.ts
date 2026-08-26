@@ -58,7 +58,7 @@ export const addressType = defineType({
             }),
         }),
         defineField({
-            name: "defaulr",
+            name: "default",
             title: "Default Address",
             type: "boolean",
             description:"Is this the dafault shipping address?",

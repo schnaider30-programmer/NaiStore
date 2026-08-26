@@ -10,7 +10,7 @@ import { ClerkLoaded, Show, UserButton } from "@clerk/nextjs";
 
 export default async function Header() {
   return (
-    <header className="bg-white py-2">
+    <header className="bg-white/70 sticky backdrop-blur-md z-50 top-0">
       <Container className="flex flex-row items-center justify-between text-light-color">
         <div className="flex items-center justify-start gap-2.5 md:gap-0">
           <MobileMenu />

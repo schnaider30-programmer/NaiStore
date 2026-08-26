@@ -6,7 +6,7 @@ import {
   FaSlack,
 } from "react-icons/fa";
 import type { ContactData, Link, SocialLink } from "@/lib/definition";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, GitCompareArrows, Headset, Mail, MapPin, Phone, ShieldCheck, Truck } from "lucide-react";
 
 export const headerData: Link[] = [
   { title: "Home", href: "/" },
@@ -110,4 +110,34 @@ export const CategoriesData: Link[] = [
   { title: "Washing Machine", href: "washing-machine" },
   { title: "Kitchen Appliances", href: "kitchen-appliances" },
   { title: "Gadget Accessories", href: "gadget-accessories" },
+];
+
+export const ProductType = [
+  { title: "Gadget", value: "gadget" },
+  { title: "Appliances", value: "appliances" },
+  { title: "Refrigerator", value: "refrigerator" },
+  { title: "Others", value: "others" },
+];
+
+export const extraData = [
+  {
+    title: "Free Delivery",
+    description: "Free shipping over $100",
+    icon: <Truck size={45} />,
+  },
+  {
+    title: "Free Return",
+    description: "Free shipping over $100",
+    icon: <GitCompareArrows size={45} />,
+  },
+  {
+    title: "Customer Support",
+    description: "Friendly 27/7 customer support",
+    icon: <Headset size={45} />,
+  },
+  {
+    title: "Money Back guarantee",
+    description: "Quality checked by our team",
+    icon: <ShieldCheck size={45} />,
+  },
 ];

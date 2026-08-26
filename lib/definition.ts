@@ -16,3 +16,41 @@ export type SocialLink = {
     href: string;
     icon: React.ReactNode;
 }
+
+export type Product = {
+  _id: string;
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  _type: "product";
+
+  name: string;
+  description: string;
+  price: number;
+  discount?: number; // optional
+  stock: number;
+  status: "new" | "used" | "refurbished" | string; // you can refine later
+  variant?: string;
+
+  isFeatured?: boolean;
+  categories?: string[];
+
+  brand?: {
+    _ref: string;
+    _type: "reference";
+  };
+
+  slug: {
+    _type: "slug";
+    current: string;
+  };
+
+  images: {
+    _key: string;
+    _type: "image";
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+  }[];
+};
