@@ -1,5 +1,5 @@
 import { urlFor } from "@/sanity/lib/image";
-import { Product } from "@/sanity/lib/sanity.types";
+import { Product } from "@/sanity.types";
 import { FlameIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

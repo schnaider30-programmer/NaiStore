@@ -6,6 +6,7 @@ import ProductGrid from "@/components/ProductGrid";
 import HomeCategories from "@/components/HomeCategories";
 import { getCategories } from "@/sanity/queries";
 import ShopByBrand from "@/components/ShopByBrand";
+import LatestBlog from "@/components/LatestBlog";
 
 export default async function Home() {
   // NOTE: sanityFetch returns `unknown` by default because its generic type
@@ -23,7 +24,8 @@ export default async function Home() {
       <Homebanner />
       <ProductGrid />
       <HomeCategories categories={categories} />
-      <ShopByBrand/>
+      <ShopByBrand />
+      <LatestBlog/>
     </Container>
   );
 }

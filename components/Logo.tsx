@@ -4,7 +4,6 @@ import Link from "next/link";
 import LogoText from "./LogoText";
 
 export default function Logo({
-  textClassName,
   width,
   height,
   imageClassName,
@@ -22,7 +21,7 @@ export default function Logo({
         height={height ?? 64} 
         src="/naiStore-optimized.png"
         alt="Nai Online Store Logo"
-      ></Image>
+      />
       <LogoText className="tracking-wide" />
     </Link>
   );

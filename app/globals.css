@@ -20,6 +20,7 @@
   --color-dark-blue: #6c7fd8;
   --color-shop-light-text: #686e7d;
   --color-shop-lighter-text: #f1f3f8;
+  --color-deal-bg: #f1f3f8;
 }
 
 @theme inline {

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Product } from "@/sanity/lib/sanity.types";
+import { Product } from "@/sanity.types";
 import { Heart } from "lucide-react";
 
 export default function AddToWishlistButton({

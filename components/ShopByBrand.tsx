@@ -45,7 +45,7 @@ export default async function ShopByBrand() {
         {extraData.map((data, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 group text-lightColor hover:text-shop_light_green"
+            className="flex items-center gap-3 group text-light-color hover:text-shop-light-green"
           >
             <span className="inline-flex scale-100 group-hover:scale-105 hoverEffect group-hover:text-shop-light-green ">
               {data.icon}

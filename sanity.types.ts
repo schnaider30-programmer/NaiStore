@@ -85,7 +85,7 @@ export type Blog = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  blogCategories?: Array<
+  blogcategories?: Array<
     {
       _key: string;
     } & BlogcategoryReference
@@ -301,7 +301,6 @@ export type Category = {
   description?: string;
   range?: number;
   featured?: boolean;
-  productCount: number;
   image?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -435,3 +434,91 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint;
+
+// Source: sanity/queries/query.ts
+// Variable: ALL_BRANDS
+// Query: *[_type == 'brand'] | order(title asc)
+export type ALL_BRANDS_RESULT = Array<{
+  _id: string;
+  _type: "brand";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug: Slug;
+  description?: string;
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
+
+// Source: sanity/queries/query.ts
+// Variable: LATEST_BLOG
+// Query: *[_type == 'blog' && isLatest == true] | order(name asc){  ...,  blogcategories[] ->{  title  }  }
+export type LATEST_BLOG_RESULT = Array<{
+  _id: string;
+  _type: "blog";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  author?: AuthorReference;
+  mainImage?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  blogcategories: Array<{
+    title: string | null;
+  }> | null;
+  publishedAt?: string;
+  isLatest: true;
+  body?: BlogContent;
+}>;
+
+// Source: sanity/queries/query.ts
+// Variable: DEAL_PRODUCTS
+// Query: *[_type == 'product' && status == 'hot'] | order(name asc) {    ..., "categories":categories[] -> title}
+export type DEAL_PRODUCTS_RESULT = Array<{
+  _id: string;
+  _type: "product";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name: string;
+  slug: Slug;
+  images?: Array<{
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+  description?: string;
+  price: number;
+  discount: number;
+  categories: Array<string> | null;
+  stock?: number;
+  brand?: BrandReference;
+  status: "hot";
+  variant?: "aplliances" | "gaddet" | "others" | "refrigerators";
+  isFeatured?: boolean;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_type == 'brand'] | order(title asc)": ALL_BRANDS_RESULT;
+    "*[_type == 'blog' && isLatest == true] | order(name asc){\n  ...,\n  blogcategories[] ->{\n  title\n  }\n  }": LATEST_BLOG_RESULT;
+    "*[_type == 'product' && status == 'hot'] | order(name asc) {\n    ..., \"categories\":categories[] -> title}": DEAL_PRODUCTS_RESULT;
+  }
+}

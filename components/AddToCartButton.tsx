@@ -1,11 +1,14 @@
 "use client"
 
-import { Product } from "@/sanity/lib/sanity.types";
+import { Product } from "@/sanity.types";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
-
+//  {
+//   product: { stock?: number };
+//   className: string;
+// }
 export default function AddToCartButton({ product, className }: { product: Product, className: string }) {
     const isOutStock = product?.stock === 0;
     const handleAddToCart = () => {

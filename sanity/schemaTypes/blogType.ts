@@ -29,7 +29,7 @@ export const blogType = defineType({
       },
     }),
     defineField({
-      name: "blogCategories",
+      name: "blogcategories",
       type: "array",
       of: [
         defineArrayMember({
