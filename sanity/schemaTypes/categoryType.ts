@@ -40,7 +40,7 @@ export const categoryType = defineType({
       title: "Category Image",
       type: "image",
       options: { hotspot: true },
-    }),
+    }),  
   ],
   preview: {
     select: {

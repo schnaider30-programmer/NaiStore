@@ -32,7 +32,7 @@ export default function NoProductAvailable({
         className="text-gray-600"
       > 
         We're sorry, but there's no products matching for{" "}
-        <span className="text-base font-semibold text-dark-color capitalize">
+        <span className="text-base font-semibold text-shop-dark-green capitalize">
           {selectedTab}
         </span>{" "}
         criteria at the moment

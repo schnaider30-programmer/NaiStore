@@ -45,7 +45,7 @@ export default function FooterBottom() {
           {CategoriesData.map((link) => (
             <li key={link.title}>
               <Link
-                href={`/categories/${link.href}`}
+                href={`/category/${link.href}`}
                 className="font-ubuntu hover:text-shop-light-green text-gray-600 font-medium"
               >
                 {link.title}
