@@ -6,7 +6,7 @@ import { client } from "@/sanity/lib/client";
 import { AnimatePresence, motion } from "motion/react";
 import { Loader2 } from "lucide-react";
 import NoProductAvailable from "./NoProductAvailable";
-import { Product } from "@/sanity/lib/sanity.types";
+import { Product } from "@/sanity.types";
 import ProductCard from "./ProductCard";
 
 export default function ProductGrid() {

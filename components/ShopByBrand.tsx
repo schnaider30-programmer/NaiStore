@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Title } from "./Text";
 import { getBrands } from "@/sanity/queries";
-import { Brand } from "@/sanity/lib/sanity.types";
+import { Brand } from "@/sanity.types";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { extraData } from "@/lib/data";

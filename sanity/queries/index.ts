@@ -2,7 +2,13 @@ import { Brand, Category, DEAL_PRODUCTS_RESULT, LATEST_BLOG_RESULT } from "@/san
 import { sanityFetch } from "../lib/live";
 import { ALL_BRANDS, DEAL_PRODUCTS, LATEST_BLOG } from "./query";
 
-const getCategories = async (quantity?: number) => {
+export type CategoryWithProductCount = Category & {
+  productCount: number;
+};
+
+const getCategories = async (
+  quantity?: number,
+): Promise<CategoryWithProductCount[]> => {
   try {
     const query = quantity
       ? `*[_type == 'category'] | order(name asc) [0...$quantity] {
@@ -15,7 +21,7 @@ const getCategories = async (quantity?: number) => {
       query,
       params: quantity ? { quantity } : {},
     });
-    return data as Category[] ?? [];
+    return (data as CategoryWithProductCount[]) ?? [];
   } catch (error) {
     console.log("Error fetching categories", error);
     return [];
@@ -45,7 +51,7 @@ const getLatestBlog = async () => {
 const getDealProducts = async () => {
     try {
         const { data } = await sanityFetch({ query: DEAL_PRODUCTS });
-        return (data as DEAL_PRODUCTS_RESULT) ?? []
+        return (data) ?? []
     } catch (error) {
         console.log("Error fetching hot deal products: ", error)
         return [];
