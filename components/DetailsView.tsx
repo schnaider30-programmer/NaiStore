@@ -3,6 +3,7 @@ import { LucidePackageCheck, LucidePackageX, StarIcon } from "lucide-react";
 import PriceView from "./PriceView";
 import AddToCartButton from "./AddToCartButton";
 import FavoriteButton from "./FavoriteButton";
+import ProductCharacteristics from "./ProductCharacteristics";
 
 export default function DetailsView({
   product,
@@ -55,6 +56,7 @@ export default function DetailsView({
         <AddToCartButton className="flex-1 basis-0 min-w-0" product={product} />
         <FavoriteButton showProduct={true} product={product} />
       </div>
+      <ProductCharacteristics product={product} />
     </>
   );
 }

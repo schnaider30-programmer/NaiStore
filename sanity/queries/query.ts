@@ -17,4 +17,10 @@ const DEAL_PRODUCTS =
 
 const PRODUCT_BY_SLUG_QUERY = defineQuery(`*[_type == "product" && slug.current == $slug] | order(name asc) [0]`);
 
-export { ALL_BRANDS, LATEST_BLOG, DEAL_PRODUCTS, PRODUCT_BY_SLUG_QUERY };
+const BRAND_QUERY = defineQuery(`*[_type == "product" && slug.current == $slug]{
+  "brandName": brand->title
+  }`);
+
+export { ALL_BRANDS, LATEST_BLOG, DEAL_PRODUCTS, PRODUCT_BY_SLUG_QUERY, BRAND_QUERY };
+
+
