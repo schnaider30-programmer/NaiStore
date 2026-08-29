@@ -1,42 +1,24 @@
 import { urlFor } from "@/sanity/lib/image";
 import { Product } from "@/sanity.types";
-import { FlameIcon, StarIcon } from "lucide-react";
+import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import AddToWishlistButton from "./AddToWishlistButton";
 import { Title } from "./Text";
 import PriceView from "./PriceView";
 import AddToCartButton from "./AddToCartButton";
+import { displayStatus } from "@/lib/utils";
+import { DealProduct } from "@/lib/definition";
 
-export default function ProductCard({ product }: { product: Product }) {
+
+
+export default function ProductCard({ product }: { product: Product | DealProduct }) {
+  const status = product.status ? displayStatus(product.status) : null;
+
   return (
     <div className="text-sm border border-dark-blue/20 rounded-md group bg-white group">
       <div className="relative group overflow-hidden bg-shop-light-bg">
-        {product?.status === "sale" && (
-          <p className="absolute top-2 left-2 z-10 text-xs border border-dark-color/50 px-2 rounded-full group-hover:border-shop-light-green hoverEffect group-hover:text-shop-light-green">
-            Sale!
-          </p>
-        )}
-
-        {product?.status === "new" && (
-          <p className="absolute top-2 left-2 z-10 text-xs border border-dark-color/50 px-2 rounded-full group-hover:border-shop-light-green group-hover:bg-shop-light-green/10 hoverEffect group-hover:text-shop-light-green">
-            New!
-          </p>
-        )}
-
-        {product?.status === "hot" && (
-          <Link
-            href={"/deal"}
-            className="absolute top-2 left-2 z-10 border border-shop-orange/50 p-1 rounded-full group-hover:border-shop-orange hover:text-shop-dark-green hoverEffect"
-          >
-            <FlameIcon
-              size={18}
-              fill="#fb6c08"
-              className="text-shop-orange/50 group-hover:text-shop-orange hoverEffect group-hover:scale-105"
-            />
-          </Link>
-        )}
-
+        {status}
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
             <Image

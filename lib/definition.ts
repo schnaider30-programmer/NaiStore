@@ -1,3 +1,4 @@
+import { getDealProducts } from "@/sanity/queries";
 import React from "react";
 
 export type ContactData = {
@@ -54,3 +55,7 @@ export type Product = {
     };
   }[];
 };
+
+export type DealProduct = NonNullable<
+  Awaited<ReturnType<typeof getDealProducts>>
+>[number];

@@ -1,3 +1,4 @@
+import { DealProduct } from "@/lib/definition";
 import { cn } from "@/lib/utils";
 import { Product } from "@/sanity.types";
 import { Heart } from "lucide-react";
@@ -6,7 +7,7 @@ export default function AddToWishlistButton({
   product,
   className,
 }: {
-  product: Product;
+  product: Product | DealProduct;
   className?: string;
 }) {
   return (

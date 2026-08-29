@@ -23,7 +23,7 @@ export default function SideMenu({
       >
         <div
           ref={sideBarRef}
-          className="min-w-72 max-w-96 bg-black/80 h-screen p-10  border-r-shop-light-green border-r-3 flex flex-col gap-6"
+          className="min-w-70 max-w-75 bg-black/80 h-screen p-10  border-r-shop-light-green border-r-3 flex flex-col gap-6"
         >
           <div className="flex items-center justify-between gap-5">
             <LogoText className="text-2xl text-white group-hover:text-shop-light-green tracking-wide cursor-pointer" />
@@ -46,7 +46,7 @@ export default function SideMenu({
               </Link>
             ))}
           </div>
-          <SocialMedia />
+          <SocialMedia className="flex-wrap" />
         </div>
       </div>
     )

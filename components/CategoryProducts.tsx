@@ -46,13 +46,13 @@ export default function CategoryProducts({
     fetchProduct(currentSlug);
   }, [router]);
   return (
-    <div className="py-5 flex flex-col md:flex-row items-start gap-5">
-      <div className="flex flex-col border md:min-w-40">
+    <div className="py-5 flex flex-col md:flex-row items-center md:items-start gap-5">
+      <div className="border gap-2.5 max-sm:flex max-sm:flex-wrap max-sm:p-2 max-sm:justify-start sm:grid  sm:grid-cols-4  md:flex  md:gap-0 md:flex-col md:min-w-45">
         {categories?.map((category) => (
           <Button
             onClick={() => handleCategory(category?.slug?.current as string)}
             key={category._id}
-            className={`bg-transparent border-0 rounded-none text-dark-color shadow-none hover:bg-shop-orange hover:text-white font-semibold hoverEffect border-b border-shop-orange/30 transition-colors last:border-b-0 capitalize ${category.slug.current === currentSlug && "bg-shop-orange text-white"}`}
+            className={`md:bg-transparent border-0 rounded-none text-dark-color shadow-none hover:bg-shop-orange hover:text-white font-semibold hoverEffect bg-gray-100 border-b border-shop-orange/30 transition-colors last:border-b-0 capitalize ${category.slug.current === currentSlug && "bg-shop-orange md:bg-shop-orange text-white"}`}
           >
             {category.title}
           </Button>
@@ -67,7 +67,7 @@ export default function CategoryProducts({
             </div>
           </div>
         ) : products.length ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-2.5 md:grid-cols-3 lg:grid-cols-5">
             {products.map((product: Product) => (
               <AnimatePresence key={product._id}>
                 <motion.div>
