@@ -115,7 +115,7 @@ export const CategoriesData: Link[] = [
 export const ProductType = [
   { title: "Gadget", value: "gadget" },
   { title: "Appliances", value: "appliances" },
-  { title: "Refrigerator", value: "refrigerator" },
+  { title: "Refrigerators", value: "refrigerators" },
   { title: "Others", value: "others" },
 ];
 
