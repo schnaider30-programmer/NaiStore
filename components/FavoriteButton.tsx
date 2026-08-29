@@ -8,7 +8,7 @@ export default function FavoriteButton({
   product,
 }: {
   showProduct?: boolean;
-  product: Product | DealProduct | PRODUCT_BY_SLUG_QUERY_RESULT;
+  product?: Product | DealProduct | PRODUCT_BY_SLUG_QUERY_RESULT;
 }) {
   return (
     <>
